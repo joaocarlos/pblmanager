@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="icon" type="image/x-icon" href="#{request.contextPath}/template/favicon.ico"  />
+        <title>Problem Database Manager - Universidade Estadual de Feira de Santana</title>
+        <link href="#{request.contextPath}/template/css/portal.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="#{request.contextPath}/template/css/dropdown.css" rel="stylesheet" type="text/css" media="screen"/>
+        <script type="text/javascript" src="#{request.contextPath}/template/js/dropdown.js" /> <!-- Menu dropdown -->
+        <link href="#{request.contextPath}/template/css/forms.css" rel="stylesheet" type="text/css" media="screen"/>
+        <ui:insert name="head" />
+        <!--<link href="#{request.contextPath}/template/css/tablecloth.css" rel="stylesheet" type="text/css" media="screen"/>-->
+        <!--<script type="text/javascript" src="#{request.contextPath}/template/js/tablecloth.js" />--> <!-- Menu dropdown -->
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <h:form>
+                    <h5>Olá, <h:outputText value=" #{professor.professorItems3}"/>! <h:commandLink action="#{professor.logout}" value="Sair" id="logout"/></h5>
+                    <h1>Problem Database Manager</h1>
+                    <h2>Deixe sua criatividade se tornar um problema</h2>
+                </h:form>
+            </div>
+            <!-- Inicio do Menu -->
+            <div id="spacer_menu"></div>
+            <div id="mainmenu">
+                <h:form id="menu">
+                    <ul class="uni">
+                        <li><span class="unimenu"><h:commandLink id="principal" action="welcome" value="Principal" immediate="true" /></span></li>
+                    </ul>
+                    <dl class="dropdown">
+                        <dt id="one-ddheader" onmouseover="ddMenu('one',1);" onmouseout="ddMenu('one',-1)">Problema</dt>
+                        <dd id="one-ddcontent" onmouseover="cancelHide('one');" onmouseout="ddMenu('one',-1)">
+                            <ul>
+                                <li><h:commandLink id="novo_problema" action="#{problema.createSetup}" value="Novo" immediate="true" styleClass="underline" /></li>
+                                <li><h:commandLink id="listar_problema" action="#{problema.listSetup}" value="Listar" immediate="true" styleClass="underline" /></li>
+                                <li><h:commandLink id="procurar" action="#{problema.buscaSetup2}" value="Procurar" immediate="true" /></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="dropdown">
+                        <dt id="two-ddheader" onmouseover="ddMenu('two',1);" onmouseout="ddMenu('two',-1)">Disciplina</dt>
+                        <dd id="two-ddcontent" onmouseover="cancelHide('two');" onmouseout="ddMenu('two',-1)">
+                            <ul>
+                                <li><h:commandLink id="nova_disciplina" action="#{disciplina.createSetup}" value="Nova"
+                                                   rendered="#{professor.render}" immediate="true" styleClass="underline" /></li>
+                                <li><h:commandLink id="lista_disciplina" action="#{disciplina.listSetup}" value="Listar" immediate="true" /></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="dropdown">
+                        <dt id="three-ddheader" onmouseover="ddMenu('three',1);" onmouseout="ddMenu('three',-1)">Usuários</dt>
+                        <dd id="three-ddcontent" onmouseover="cancelHide('three');" onmouseout="ddMenu('three',-1)">
+                            <ul>
+                                <li><h:commandLink id="novo_usuario" action="#{professor.createSetup}" value="Cadastrar"
+                                                   rendered="#{professor.render}" immediate="true" styleClass="underline" /></li>
+                                <li><h:commandLink id="lista_usuario" action="#{professor.listSetup}" value="Listar"
+                                                   immediate="true" /></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </h:form>
+            </div>
+            <!-- Fim do menu -->
+
+
+            <!-- start content -->
+
+            <div id="content">
+                <!--<div id="scrollable">-->
+                    <div id="left">
+                        <h:panelGroup id="messagePanel" layout="block" styleClass="">
+                            <h:messages errorClass="error" errorStyle="list-style: none; padding-bottom" infoClass="success" tooltip="Teste" layout="list" />
+                        </h:panelGroup>
+                        <div style="padding: 5px 0px 1px 10px; width: 710px"/>
+                        <ui:insert name="content"/>
+                    </div>
+                    <div style="clear:both;"> </div>
+                <!--</div>-->
+            </div>
+
+            <div id="bottom"> </div>
+            <div id="footer">&copy; Copyright 2011 <a href="http://ecomp.uefs.br/pblmanager" style="color: #336699">Problem Manager</a>, Universidade Estadual de Feira de Santana<br />
+                Design adaptado por Maria Alice Leal e João Carlos Bittencourt de <a href="http://www.opendesigns.org/preview/?template=1913" style="color: #336699">OpenDesign</a><br />
+                Problem Database Manager é distribuido sob licença <a href="http://www.gnu.org/licenses/gpl.html" style="color: #336699">GNU GPL Versão 3</a>.
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+@CHARSET "UTF-8";
+
+body {
+	width: 710px;
+	margin: auto;
+	font-size: 10px;
+}
+
+table, td, tr, tbody {
+	padding: 0;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+table.big {
+	margin: 10px;
+}
+fieldset    { padding:1.1em; width: 700px; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; margin: 0, 5px; }
+.spacer {
+	display:block;
+	width: 100%;
+	height: 100%;
+	clear: both;
+}
+
+div#root {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div#problem_title {
+	font-size: 15px;
+	text-align: center;
+	margin: 30px 10px;
+}
+
+div#head {
+	text-align: center;
+}
+
+div#head .head_title {
+	font-size: 13px;
+	line-height: 15px;
+	display: block;
+}
+
+div#detail {
+	text-align: left;
+	margin: 15px;
+        font-size: 12px;
+}
+
+.strtitle {
+    color: #50728E;
+    display: block;
+    padding: 3px 0;
+}
+
+div#images table {
+    border: none;
+    text-align: center;
+}
+
+fieldset#info .table_description, fieldset#info .table_title,
+fieldset#problem_detail .table_title, fieldset#problem_detail .table_description,
+fieldset#orient .table_description, fieldset#orient .table_description {
+	line-height: 15px;
+}
+
+fieldset#info .table_title {
+	width: 110px;
+	text-align: right;
+	display: table-row;
+	float: left;
+	padding-right: 5px;
+}
+
+fieldset#info .table_description {
+	width: 240px;
+	float: left;
+}
+
+fieldset#problem_detail .table_title {
+	width: 110px;
+	text-align: right;
+	float: left;
+	padding-right: 5px;
+}
+
+fieldset#problem_detail .table_description {
+	width: 580px;
+	float: left;
+}
+
+fieldset#orient .table_title {
+	width: 110px;
+	text-align: right;
+	float: left;
+	padding-right: 5px;
+}
+
+fieldset#orient .table_description {
+	width: 580px;
+	float: left;
+}
+
+.odd_row, .even_row {
+	line-height: 15px;
+	/*background: url(../seta.png) #fff 0px 2px no-repeat;*/
+}
+
+td {
+	line-height: 15px;
+	/*padding-left: 10px;*/
+}
+
+.imprimir {
+	margin: 20px;
+	text-align: center;
+}
+#images {
+    text-align: center;
+    display: block;
+    width: 70%; margin:auto
+}
+#images table td {
+    text-align: center
+}
